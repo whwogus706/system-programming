@@ -12,6 +12,8 @@
 unsigned long score=0;
 unsigned char scheme=0;
 
+
+//make the color for board and number
 void makecolor(unsigned char value, char *color, size_t length){
         unsigned char basic[] = {8,255,1,255,2,255,3,255,4,255,5,255,6,255,7,255,9,0,10,0,11,0,12,0,13,0,14,0,255,0,255,0};
         unsigned char * schemes[] = {basic};
@@ -27,7 +29,7 @@ void makecolor(unsigned char value, char *color, size_t length){
 
         printf(color,length,"\033[38;5;%d;48;5;%dm",*foreground,*background);
 }
-
+//make 4x4 board & pts
 void makeboard(unsigned char board[SIZE][SIZE]){
         unsigned char x, y;
         char c;
@@ -135,6 +137,7 @@ void addRandom(unsigned char board[SIZE][SIZE]) {
         }
 }
 
+//initialize the board before starting the game
 void initboard(unsigned char board[SIZE][SIZE]) {
         unsigned char x,y;
         for (x=0;x<SIZE;x++) {
@@ -148,6 +151,7 @@ void initboard(unsigned char board[SIZE][SIZE]) {
         score = 0;
 }
 
+//main 
 int main(int argc, char *argv[]){
         unsigned char board[SIZE][SIZE];
         char c;
